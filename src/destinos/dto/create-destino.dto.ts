@@ -1,5 +1,19 @@
+import { IsNotEmpty, IsString, IsNumber } from 'class-validator';
+
 export class CreateDestinoDto {
-    ciudad:           string;
-    pais:             string;
-    codigoAeropuerto: string;
+  @IsNumber()
+  @IsNotEmpty()
+  id: number;
+
+  @IsString()
+  @IsNotEmpty()
+  ciudad: string;
+
+  @IsString()
+  @IsNotEmpty()
+  pais: string;
+
+  @IsString()
+  @IsNotEmpty()
+  codigoAeropuerto: string;
 }

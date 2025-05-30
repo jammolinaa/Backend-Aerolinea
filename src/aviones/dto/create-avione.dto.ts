@@ -1,4 +1,14 @@
+import { IsNotEmpty, IsString, IsInt } from 'class-validator';
 export class CreateAvioneDto {
-   modelo:    string;
-   capacidad: number;
+  @IsInt()
+  @IsNotEmpty()
+  id: number;
+
+  @IsString()
+  @IsNotEmpty()
+  modelo: string;
+
+  @IsInt()
+  @IsNotEmpty()
+  capacidad: number;
 }

@@ -1,9 +1,10 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UsePipes, ValidationPipe } from '@nestjs/common';
 import { DestinosService } from './destinos.service';
 import { CreateDestinoDto } from './dto/create-destino.dto';
 import { UpdateDestinoDto } from './dto/update-destino.dto';
 
 @Controller('destinos')
+@UsePipes(new ValidationPipe())
 export class DestinosController {
   constructor(private readonly destinosService: DestinosService) {}
 

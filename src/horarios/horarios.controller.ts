@@ -1,10 +1,11 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, UsePipes, ValidationPipe } from '@nestjs/common';
 import { HorariosService } from './horarios.service';
 import { CreateHorarioDto } from './dto/create-horario.dto';
 import { UpdateHorarioDto } from './dto/update-horario.dto';
 import { createReadStream } from 'fs';
 
 @Controller('horarios')
+@UsePipes(new ValidationPipe())
 export class HorariosController {
   constructor(private readonly horariosService: HorariosService) {}
 
