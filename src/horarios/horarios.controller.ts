@@ -2,6 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { HorariosService } from './horarios.service';
 import { CreateHorarioDto } from './dto/create-horario.dto';
 import { UpdateHorarioDto } from './dto/update-horario.dto';
+import { createReadStream } from 'fs';
 
 @Controller('horarios')
 export class HorariosController {
@@ -9,6 +10,7 @@ export class HorariosController {
 
   @Post()
   create(@Body() createHorarioDto: CreateHorarioDto) {
+    console.log(createReadStream);
     return this.horariosService.create(createHorarioDto);
   }
 

@@ -9,6 +9,7 @@ export class DestinosController {
 
   @Post()
   create(@Body() createDestinoDto: CreateDestinoDto) {
+    console.log(createDestinoDto);
     return this.destinosService.create(createDestinoDto);
   }
 

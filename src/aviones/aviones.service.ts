@@ -17,6 +17,7 @@ export class AvionesService {
   }
 
   update(id: number, updateAvioneDto: UpdateAvioneDto) {
+    console.log(updateAvioneDto);
     return `This action updates a #${id} avione`;
   }
 

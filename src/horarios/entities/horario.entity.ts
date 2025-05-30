@@ -1,1 +1,1 @@
-export class Horario {}
+export class horarios {}

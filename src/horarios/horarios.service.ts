@@ -17,6 +17,7 @@ export class HorariosService {
   }
 
   update(id: number, updateHorarioDto: UpdateHorarioDto) {
+    console.log(updateHorarioDto);
     return `This action updates a #${id} horario`;
   }
 
