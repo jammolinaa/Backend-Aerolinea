@@ -1,17 +1,16 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UsePipes, ValidationPipe } from '@nestjs/common';
+// src/destinos/destinos.controller.ts
+import { Controller, Post, Get, Body, Patch, Param, Delete } from '@nestjs/common';
 import { DestinosService } from './destinos.service';
 import { CreateDestinoDto } from './dto/create-destino.dto';
 import { UpdateDestinoDto } from './dto/update-destino.dto';
 
 @Controller('destinos')
-@UsePipes(new ValidationPipe())
 export class DestinosController {
   constructor(private readonly destinosService: DestinosService) {}
 
   @Post()
-  create(@Body() createDestinoDto: CreateDestinoDto) {
-    console.log(createDestinoDto);
-    return this.destinosService.create(createDestinoDto);
+  create(@Body() dto: CreateDestinoDto) {
+    return this.destinosService.create(dto);
   }
 
   @Get()
@@ -19,18 +18,18 @@ export class DestinosController {
     return this.destinosService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.destinosService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateDestinoDto: UpdateDestinoDto) {
-    return this.destinosService.update(+id, updateDestinoDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.destinosService.remove(+id);
-  }
+   @Get(':id')
+    findOne(@Param('id') id: string) {
+      return this.destinosService.findOne(+id);
+    }
+  
+    @Patch(':id')
+    update(@Param('id') id: string, @Body() updateDestinoDto: UpdateDestinoDto) {
+      return this.destinosService.update(+id, updateDestinoDto);
+    }
+  
+    @Delete(':id')
+    remove(@Param('id') id: string) {
+      return this.destinosService.remove(+id);
+    }
 }

@@ -1,22 +1,21 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Query, UsePipes, ValidationPipe } from '@nestjs/common';
+// src/pasajeros/pasajeros.controller.ts
+import {
+  Controller,Post,Get,Patch,Delete,Param,Body} from '@nestjs/common';
 import { PasajerosService } from './pasajeros.service';
 import { CreatePasajeroDto } from './dto/create-pasajero.dto';
 import { UpdatePasajeroDto } from './dto/update-pasajero.dto';
 
 @Controller('pasajeros')
-@UsePipes(new ValidationPipe())
 export class PasajerosController {
   constructor(private readonly pasajerosService: PasajerosService) {}
 
   @Post()
-  create(@Body() crear: CreatePasajeroDto) {
-    console.log(crear)
-    return this.pasajerosService.create(crear);
+  create(@Body() dto: CreatePasajeroDto) {
+    return this.pasajerosService.create(dto);
   }
 
   @Get()
-  findAll(@Query() query: string) {
-    console.log(query)
+  findAll() {
     return this.pasajerosService.findAll();
   }
 
@@ -26,8 +25,8 @@ export class PasajerosController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updatePasajeroDto: UpdatePasajeroDto) {
-    return this.pasajerosService.update(+id, updatePasajeroDto);
+  update(@Param('id') id: string, @Body() dto: UpdatePasajeroDto) {
+    return this.pasajerosService.update(+id, dto);
   }
 
   @Delete(':id')

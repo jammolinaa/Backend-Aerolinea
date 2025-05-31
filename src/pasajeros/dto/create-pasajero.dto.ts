@@ -1,7 +1,6 @@
 import { IsEmail, IsInt, IsNotEmpty, IsString } from "class-validator";
 export class CreatePasajeroDto {
-    @IsInt()
-    id:        number;
+
     @IsString()
     @IsNotEmpty()
     nombre:    string;

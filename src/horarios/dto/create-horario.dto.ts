@@ -2,9 +2,6 @@ import { IsNotEmpty, IsNumber, IsDate } from 'class-validator';
 import { Type } from 'class-transformer';
 
 export class CreateHorarioDto {
-  @IsNumber()
-  @IsNotEmpty()
-  id: number;
 
   @IsDate()
   @IsNotEmpty()

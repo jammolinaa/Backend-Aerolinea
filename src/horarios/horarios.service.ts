@@ -1,27 +1,36 @@
 import { Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { horarios } from './entities/horario.entity';
+import { Repository } from 'typeorm';
 import { CreateHorarioDto } from './dto/create-horario.dto';
 import { UpdateHorarioDto } from './dto/update-horario.dto';
 
 @Injectable()
 export class HorariosService {
-  create(createHorarioDto: CreateHorarioDto) {
-    return 'This action adds a new horario';
+  constructor(
+    @InjectRepository(horarios)
+    private horariosRepository: Repository<horarios>,
+  ){}
+
+async create(dto: CreateHorarioDto): Promise<horarios>{
+    const destino = this.horariosRepository.create(dto);
+    return await this.horariosRepository.save(destino);
   }
 
-  findAll() {
-    return `This action returns all horarios`;
+  async findAll(): Promise<horarios[]> {
+    return this.horariosRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} horario`;
+  async findOne(id: number): Promise<horarios> {
+      return await this.horariosRepository.findOneBy({ id });
+    }
+  
+  async update(id: number, updateDestinoDto: UpdateHorarioDto): Promise<horarios> {
+      await this.horariosRepository.update(id, updateDestinoDto);
+      return this.findOne(id);
+    }
+  
+  async remove(id: number): Promise<void> {
+      await this.horariosRepository.delete(id);
+    }
   }
-
-  update(id: number, updateHorarioDto: UpdateHorarioDto) {
-    console.log(updateHorarioDto);
-    return `This action updates a #${id} horario`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} horario`;
-  }
-}

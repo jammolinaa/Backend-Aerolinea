@@ -1,28 +1,28 @@
-import { IsNotEmpty, IsNumber, IsArray, ArrayNotEmpty, IsInt } from 'class-validator';
+import { IsNotEmpty, IsString, IsNumber } from 'class-validator';
 
 export class CreateVueloDto {
-  @IsInt()
+  @IsString()
   @IsNotEmpty()
-  id: number;
+  numeroVuelo: string;
 
-  @IsInt()
+  @IsString()
   @IsNotEmpty()
+  fecha: string;
+
+  @IsString()
+  @IsNotEmpty()
+  horaSalida: string;
+
+  @IsString()
+  @IsNotEmpty()
+  horaLlegada: string;
+
+  @IsNumber()
   avionId: number;
 
-  @IsInt()
-  @IsNotEmpty()
+  @IsNumber()
   origenId: number;
 
-  @IsInt()
-  @IsNotEmpty()
+  @IsNumber()
   destinoId: number;
-
-  @IsInt()
-  @IsNotEmpty()
-  horarioId: number;
-
-  @IsArray()
-  @ArrayNotEmpty()
-  @IsInt({ each: true })
-  pasajerosId: number[];
 }

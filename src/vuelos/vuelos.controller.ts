@@ -1,22 +1,28 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Query, UsePipes, ValidationPipe} from '@nestjs/common';
+// src/vuelos/vuelos.controller.ts
+import {
+  Controller,
+  Post,
+  Get,
+  Patch,
+  Delete,
+  Param,
+  Body,
+} from '@nestjs/common';
 import { VuelosService } from './vuelos.service';
 import { CreateVueloDto } from './dto/create-vuelo.dto';
 import { UpdateVueloDto } from './dto/update-vuelo.dto';
 
 @Controller('vuelos')
-@UsePipes(new ValidationPipe())
 export class VuelosController {
   constructor(private readonly vuelosService: VuelosService) {}
 
   @Post()
-  create(@Body() createVueloDto: CreateVueloDto) {
-    console.log(createVueloDto);
-    return this.vuelosService.create(createVueloDto);
+  create(@Body() dto: CreateVueloDto) {
+    return this.vuelosService.create(dto);
   }
 
   @Get()
-  findAll(@Query() query:string) {
-    console.log(query);
+  findAll() {
     return this.vuelosService.findAll();
   }
 
@@ -26,8 +32,8 @@ export class VuelosController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateVueloDto: UpdateVueloDto) {
-    return this.vuelosService.update(+id, updateVueloDto);
+  update(@Param('id') id: string, @Body() dto: UpdateVueloDto) {
+    return this.vuelosService.update(+id, dto);
   }
 
   @Delete(':id')

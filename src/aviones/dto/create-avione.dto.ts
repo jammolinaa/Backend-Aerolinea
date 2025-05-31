@@ -1,7 +1,6 @@
-import { IsNotEmpty, IsString, IsInt } from 'class-validator';
+import { IsNotEmpty, IsString, IsInt, IsBoolean, IsOptional } from 'class-validator';
 export class CreateAvioneDto {
-  @IsInt()
-  @IsNotEmpty()
+
   id: number;
 
   @IsString()
@@ -11,4 +10,8 @@ export class CreateAvioneDto {
   @IsInt()
   @IsNotEmpty()
   capacidad: number;
+
+  @IsBoolean()
+  @IsOptional()
+  disponible?: boolean;
 }

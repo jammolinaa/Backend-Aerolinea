@@ -1,27 +1,42 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { Pasajero } from './entities/pasajero.entity';
 import { CreatePasajeroDto } from './dto/create-pasajero.dto';
 import { UpdatePasajeroDto } from './dto/update-pasajero.dto';
 
 @Injectable()
 export class PasajerosService {
-  create(createPasajeroDto: CreatePasajeroDto) {
-    return 'This action adds a new pasajero';
+  constructor(
+    @InjectRepository(Pasajero)
+    private pasajeroRepository: Repository<Pasajero>,
+  ) {}
+
+  async create(dto: CreatePasajeroDto): Promise<Pasajero> {
+    const pasajero = this.pasajeroRepository.create(dto);
+    return await this.pasajeroRepository.save(pasajero);
   }
 
-  findAll() {
-    return `This action returns all pasajeros`;
+  async findAll(): Promise<Pasajero[]> {
+    return this.pasajeroRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} pasajero`;
+  async findOne(id: number): Promise<Pasajero> {
+    const pasajero = await this.pasajeroRepository.findOneBy({ id });
+    if (!pasajero) throw new NotFoundException(`Pasajero con ID ${id} no encontrado`);
+    return pasajero;
   }
 
-  update(id: number, updatePasajeroDto: UpdatePasajeroDto) {
-    console.log(updatePasajeroDto);
-    return `This action updates a #${id} pasajero`;
+  async update(id: number, dto: UpdatePasajeroDto): Promise<Pasajero> {
+    await this.pasajeroRepository.update(id, dto);
+    return this.findOne(id);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} pasajero`;
+  async remove(id: number): Promise<{ message: string }> {
+    const result = await this.pasajeroRepository.delete(id);
+    if (result.affected === 0) {
+      throw new NotFoundException(`Pasajero con ID ${id} no encontrado`);
+    }
+    return { message: `Pasajero con ID ${id} eliminado` };
   }
 }

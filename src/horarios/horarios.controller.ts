@@ -2,7 +2,6 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, UsePipes, Validation
 import { HorariosService } from './horarios.service';
 import { CreateHorarioDto } from './dto/create-horario.dto';
 import { UpdateHorarioDto } from './dto/update-horario.dto';
-import { createReadStream } from 'fs';
 
 @Controller('horarios')
 @UsePipes(new ValidationPipe())
@@ -11,7 +10,7 @@ export class HorariosController {
 
   @Post()
   create(@Body() createHorarioDto: CreateHorarioDto) {
-    console.log(createReadStream);
+    console.log(createHorarioDto);
     return this.horariosService.create(createHorarioDto);
   }
 
