@@ -68,7 +68,6 @@ Puedes probar la API usando herramientas como:
 - **Postman**
 - **Insomnia** 
 - **Thunder Client** (VS Code)
-- **cURL**
 
 ## 📚 Endpoints y Ejemplos
 
@@ -99,10 +98,11 @@ Puedes probar la API usando herramientas como:
 
 ```json
 {
-  "nombre": "Bogotá",
-  "codigo": "BOG",
-  "pais": "Colombia"
+  "ciudad": "Barranquilla",
+  "pais": "Cololmbia",
+  "codigoAeropuerto": "EZE"
 }
+
 ```
 
 ### ⏰ Horarios
@@ -134,17 +134,7 @@ src/
 └── main.ts
 ```
 
-## 🤝 Contribución
 
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-## 📝 Licencia
-
-Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE](LICENSE) para más detalles.
 
 ## 👨‍💻 Autor
 
@@ -153,21 +143,3 @@ Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE](LICENSE) pa
 
 
 
-
-
-
-
-
-
-## Run tests
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
