@@ -19,71 +19,136 @@
     <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
   <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
 </p>
- 
-## Iniciar API REST con NestJS - API Aerolínea
+ # API Aerolínea - NestJS REST API
 
-<h2>Requisitos Previos</h2>
-<p>Tener instalado Node js v20+</p>
-<p>Tener instalado MySQL y crear una base de datos llamada: aerolinea </p>
+Una API REST desarrollada con NestJS para la gestión de una aerolínea, incluyendo aviones, pasajeros, destinos y horarios.
 
-## Ingresar al cmd y usar estos comand:
-```
+## 📋 Requisitos Previos
+
+- **Node.js** v20 o superior
+- **MySQL** instalado y configurado
+- **Git** para clonar el repositorio
+
+## 🚀 Instalación
+
+### 1. Clonar el repositorio
+```bash
 git clone https://github.com/jammolinaa/Aerolinea.git
-cd aerolinea
-code .
+cd Aerolinea
 ```
 
-## Instalar las dependencias del proyecto
+### 2. Configurar la base de datos
+Crear una base de datos en MySQL llamada `aerolinea`:
+```sql
+CREATE DATABASE aerolinea;
 ```
+
+### 3. Instalar dependencias
+```bash
 npm install
-npm i -g @nestjs/cli (opcional)
 ```
 
-## Ejecutar el servidor: npm run start:dev
-  <p> YA estarfia operativo </p>
+### 4. Instalar NestJS CLI (opcional)
+```bash
+npm i -g @nestjs/cli
+```
 
-  
-## Testing for API (Postman, Insomnia, Thunder Client)
-## JSON’s
+## ▶️ Ejecutar la aplicación
 
-* Aviones
-<p>
-  localhost:3000/aviones n/
-{ n/
-    "modelo": "Boeing 737",
-    "capacidad": 180,
-    "disponible": false
+### Modo desarrollo
+```bash
+npm run start:dev
+```
+
+La API estará disponible en: `http://localhost:3000`
+
+## 🧪 Testing de la API
+
+Puedes probar la API usando herramientas como:
+- **Postman**
+- **Insomnia** 
+- **Thunder Client** (VS Code)
+- **cURL**
+
+## 📚 Endpoints y Ejemplos
+
+### ✈️ Aviones
+**Endpoint:** `POST http://localhost:3000/aviones`
+
+```json
+{
+  "modelo": "Boeing 737",
+  "capacidad": 180,
+  "disponible": true
 }
-</p>  
+```
 
+### 👥 Pasajeros
+**Endpoint:** `POST http://localhost:3000/pasajeros`
 
-## Pasajeros
-localhost:3000/pasajeros
-
-{ 
-  "nombre": "Jam Molina",
-  "documento": 12345678,
-  "email": "jam.molina@example.com"
-}
-
-## Destino
-localhost:3000/pasajeros
-
+```json
 {
   "nombre": "Juan Pérez",
   "documento": 12345678,
   "email": "juan.perez@example.com"
 }
+```
 
-## Horarios
-localhost:3000/Horarios
+### 🌍 Destinos
+**Endpoint:** `POST http://localhost:3000/destinos`
 
+```json
 {
-  "salida": "2025-06-01 08:30",
-  "llegada": "2025-06-01 12:45"
+  "nombre": "Bogotá",
+  "codigo": "BOG",
+  "pais": "Colombia"
 }
+```
 
-## LISTO
+### ⏰ Horarios
+**Endpoint:** `POST http://localhost:3000/horarios`
+
+```json
+{
+  "salida": "2025-06-01T08:30:00Z",
+  "llegada": "2025-06-01T12:45:00Z"
+}
+```
+
+## 🛠️ Tecnologías Utilizadas
+
+- **NestJS** - Framework de Node.js
+- **TypeScript** - Lenguaje de programación
+- **MySQL** - Base de datos
+- **TypeORM** - ORM para base de datos
+
+## 📁 Estructura del Proyecto
+
+```
+src/
+├── aviones/
+├── pasajeros/
+├── destinos/
+├── horarios/
+├── app.module.ts
+└── main.ts
+```
+
+## 🤝 Contribución
+
+1. Fork el proyecto
+2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
+3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
+4. Push a la rama (`git push origin feature/AmazingFeature`)
+5. Abre un Pull Request
+
+## 📝 Licencia
+
+Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE](LICENSE) para más detalles.
+
+## 👨‍💻 Autor
+
+- **jammolinaa** - [GitHub](https://github.com/jammolinaa)
 
 
 
@@ -106,5 +171,3 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-
-
