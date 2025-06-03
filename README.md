@@ -41,13 +41,15 @@ npm i -g @nestjs/cli (opcional)
 
 ## Ejecutar el servidor: npm run start:dev
   <p> YA estarfia operativo </p>
+
+  
 ## Testing for API (Postman, Insomnia, Thunder Client)
 ## JSON’s
 
 * Aviones
 <p>
-  localhost:3000/aviones
-{
+  localhost:3000/aviones n/
+{ n/
     "modelo": "Boeing 737",
     "capacidad": 180,
     "disponible": false
