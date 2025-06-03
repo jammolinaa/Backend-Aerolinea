@@ -19,31 +19,77 @@
     <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
   <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+ 
+## Iniciar API REST con NestJS - API Aerolínea
 
-## Description
+Requisitos Previos
+Tener instalado Node js v20+
+Tener instalado MySQL y crear una base de datos llamada: aerolinea
+Clonar el repositorio desde GitHub
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Project setup
-
-```bash
-$ npm install
+## Ingresar al cmd y usar estos comand:
+```
+git clone https://github.com/jammolinaa/Aerolinea.git
+cd aerolinea
+code .
 ```
 
-## Compile and run the project
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+## Instalar las dependencias del proyecto
 ```
+npm install
+npm i -g @nestjs/cli (opcional)
+```
+
+## Ejecutar el servidor: npm run start:dev
+
+## Testing for API (Postman, Insomnia, Thunder Client)
+## JSON’s
+
+## Aviones
+localhost:3000/aviones
+{
+    "modelo": "Boeing 737",
+    "capacidad": 180,
+    "disponible": false
+}
+
+
+## Pasajeros
+localhost:3000/pasajeros
+
+{ 
+  "nombre": "Jam Molina",
+  "documento": 12345678,
+  "email": "jam.molina@example.com"
+}
+
+## Destino
+localhost:3000/pasajeros
+
+{
+  "nombre": "Juan Pérez",
+  "documento": 12345678,
+  "email": "juan.perez@example.com"
+}
+
+## Horarios
+localhost:3000/Horarios
+
+{
+  "salida": "2025-06-01 08:30",
+  "llegada": "2025-06-01 12:45"
+}
+
+## LISTO
+
+
+
+
+
+
+
+
+
 
 ## Run tests
 
@@ -58,42 +104,4 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Deployment
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
-```bash
-$ npm install -g mau
-$ mau deploy
-```
-
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
-
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
