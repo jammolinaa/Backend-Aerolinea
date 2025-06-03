@@ -21,7 +21,6 @@
 </p>
  # API Aerolínea - NestJS REST API
 
-Una API REST desarrollada con NestJS para la gestión de una aerolínea, incluyendo aviones, pasajeros, destinos y horarios.
 
 ## 📋 Requisitos Previos
 
