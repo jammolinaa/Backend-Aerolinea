@@ -22,10 +22,10 @@
  
 ## Iniciar API REST con NestJS - API Aerolínea
 
-Requisitos Previos
-Tener instalado Node js v20+
-Tener instalado MySQL y crear una base de datos llamada: aerolinea
-Clonar el repositorio desde GitHub
+<h2>Requisitos Previos</h2>
+<p>Tener instalado Node js v20+</p>
+<p>Tener instalado MySQL y crear una base de datos llamada: aerolinea </p>
+```Clonar el repositorio desde GitHub```
 
 ## Ingresar al cmd y usar estos comand:
 ```
