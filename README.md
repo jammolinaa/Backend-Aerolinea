@@ -25,7 +25,6 @@
 <h2>Requisitos Previos</h2>
 <p>Tener instalado Node js v20+</p>
 <p>Tener instalado MySQL y crear una base de datos llamada: aerolinea </p>
-```Clonar el repositorio desde GitHub```
 
 ## Ingresar al cmd y usar estos comand:
 ```
@@ -41,17 +40,19 @@ npm i -g @nestjs/cli (opcional)
 ```
 
 ## Ejecutar el servidor: npm run start:dev
-
+  <p> YA estarfia operativo </p>
 ## Testing for API (Postman, Insomnia, Thunder Client)
 ## JSON’s
 
-## Aviones
-localhost:3000/aviones
+* Aviones
+<p>
+  localhost:3000/aviones
 {
     "modelo": "Boeing 737",
     "capacidad": 180,
     "disponible": false
 }
+</p>  
 
 
 ## Pasajeros
