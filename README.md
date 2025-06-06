@@ -19,6 +19,7 @@
     <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
   <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
 </p>
+<<<<<<< HEAD
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
@@ -97,3 +98,128 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+=======
+ # API Aerolínea - NestJS REST API
+
+
+## 📋 Requisitos Previos
+
+- **Node.js** v20 o superior
+- **MySQL** instalado y configurado
+- **Git** para clonar el repositorio
+
+## 🚀 Instalación
+
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/jammolinaa/Aerolinea.git
+cd Aerolinea
+```
+
+### 2. Configurar la base de datos
+Crear una base de datos en MySQL llamada `aerolinea`:
+```sql
+CREATE DATABASE aerolinea;
+```
+
+### 3. Instalar dependencias
+```bash
+npm install
+```
+
+### 4. Instalar NestJS CLI (opcional)
+```bash
+npm i -g @nestjs/cli
+```
+
+## ▶️ Ejecutar la aplicación
+
+### Modo desarrollo
+```bash
+npm run start:dev
+```
+
+La API estará disponible en: `http://localhost:3000`
+
+## 🧪 Testing de la API
+
+Puedes probar la API usando herramientas como:
+- **Postman**
+- **Insomnia** 
+- **Thunder Client** (VS Code)
+
+## 📚 Endpoints y Ejemplos
+
+### ✈️ Aviones
+**Endpoint:** `POST http://localhost:3000/aviones`
+
+```json
+{
+  "modelo": "Boeing 737",
+  "capacidad": 180,
+  "disponible": true
+}
+```
+
+### 👥 Pasajeros
+**Endpoint:** `POST http://localhost:3000/pasajeros`
+
+```json
+{
+  "nombre": "Juan Pérez",
+  "documento": 12345678,
+  "email": "juan.perez@example.com"
+}
+```
+
+### 🌍 Destinos
+**Endpoint:** `POST http://localhost:3000/destinos`
+
+```json
+{
+  "ciudad": "Barranquilla",
+  "pais": "Cololmbia",
+  "codigoAeropuerto": "EZE"
+}
+
+```
+
+### ⏰ Horarios
+**Endpoint:** `POST http://localhost:3000/horarios`
+
+```json
+{
+  "salida": "2025-06-01T08:30:00Z",
+  "llegada": "2025-06-01T12:45:00Z"
+}
+```
+
+## 🛠️ Tecnologías Utilizadas
+
+- **NestJS** - Framework de Node.js
+- **TypeScript** - Lenguaje de programación
+- **MySQL** - Base de datos
+- **TypeORM** - ORM para base de datos
+
+## 📁 Estructura del Proyecto
+
+```
+src/
+├── aviones/
+├── pasajeros/
+├── destinos/
+├── horarios/
+├── app.module.ts
+└── main.ts
+```
+
+
+
+## 👨‍💻 Autor
+
+- **jammolinaa** - [GitHub](https://github.com/jammolinaa)
+
+
+
+
+>>>>>>> 566dea056b36ef05cda479c1fd7ac028b3a6be03

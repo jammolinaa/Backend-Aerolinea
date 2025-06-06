@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Injectable, NotFoundException } from '@nestjs/common';
+=======
+import { Injectable } from '@nestjs/common';
+>>>>>>> 566dea056b36ef05cda479c1fd7ac028b3a6be03
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Destino } from './entities/destino.entity';
@@ -30,6 +34,7 @@ export class DestinosService {
       return this.findOne(id);
     }
   
+<<<<<<< HEAD
   async remove(id: number): Promise<{ message: string }> {
         const result = await this.destinoRepository.delete(id);
         if (result.affected === 0) {
@@ -37,4 +42,9 @@ export class DestinosService {
         }
         return { message: `Pasajero con ID ${id} eliminado` };
       }
+=======
+  async remove(id: number): Promise<void> {
+      await this.destinoRepository.delete(id);
+    }
+>>>>>>> 566dea056b36ef05cda479c1fd7ac028b3a6be03
 }
