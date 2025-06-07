@@ -10,10 +10,6 @@ export class AvionesController {
 
   @Post()
   create(@Body() createAvioneDto: CreateAvioneDto) {
-<<<<<<< HEAD
-=======
-    console.log(createAvioneDto);
->>>>>>> 566dea056b36ef05cda479c1fd7ac028b3a6be03
     return this.avionesService.create(createAvioneDto);
   }
 

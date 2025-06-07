@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { Injectable, NotFoundException } from '@nestjs/common';
-=======
-import { Injectable } from '@nestjs/common';
->>>>>>> 566dea056b36ef05cda479c1fd7ac028b3a6be03
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Aviones } from './entities/avione.entity';
@@ -16,7 +12,6 @@ export class AvionesService {
     private avionesRepository: Repository<Aviones>,
   ) { }
 
-<<<<<<< HEAD
   async create(createAvioneDto: CreateAvioneDto): Promise<{ message: string; data: Aviones }> {
   const nuevoAvion = this.avionesRepository.create(createAvioneDto);
   const guardado = await this.avionesRepository.save(nuevoAvion);
@@ -24,12 +19,6 @@ export class AvionesService {
   return { message: 'Avión creado exitosamente', data: guardado };
 }
 
-=======
-  async create(createAvioneDto: CreateAvioneDto): Promise<Aviones> {
-    const nuevoAvion = this.avionesRepository.create(createAvioneDto);
-    return await this.avionesRepository.save(nuevoAvion);
-  }
->>>>>>> 566dea056b36ef05cda479c1fd7ac028b3a6be03
 
   async findAll(): Promise<Aviones[]> {
     return await this.avionesRepository.find();
@@ -41,7 +30,6 @@ export class AvionesService {
 
   async update(id: number, updateAvioneDto: UpdateAvioneDto): Promise<Aviones> {
     await this.avionesRepository.update(id, updateAvioneDto);
-<<<<<<< HEAD
     return this.findOne(id); 
   }
 
@@ -52,12 +40,4 @@ export class AvionesService {
         }
         return { message: `Pasajero con ID ${id} eliminado` };
       }
-=======
-    return this.findOne(id);
-  }
-
-  async remove(id: number): Promise<void> {
-    await this.avionesRepository.delete(id);
-  }
->>>>>>> 566dea056b36ef05cda479c1fd7ac028b3a6be03
 }
