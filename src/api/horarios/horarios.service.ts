@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Horarios } from './entities/horario.entity';
+import { Horarios } from '../../data/entities/horarios/horario.entity';
 import { Repository } from 'typeorm';
 import { CreateHorarioDto } from './dto/create-horario.dto';
 import { UpdateHorarioDto } from './dto/update-horario.dto';

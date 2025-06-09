@@ -1,13 +1,12 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { VuelosModule } from './vuelos/vuelos.module';
-import { HorariosModule } from './horarios/horarios.module';
-import { DestinosModule } from './destinos/destinos.module';
-import { PasajerosModule } from './pasajeros/pasajeros.module';
-import { AvionesModule } from './aviones/aviones.module';
+import { HorariosModule } from './api/horarios/horarios.module';
+import { DestinosModule } from './api/destinos/destinos.module';
+import { PasajerosModule } from './api/pasajeros/pasajeros.module';
+import { AvionesModule } from './api/aviones/aviones.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { typeOrmConfig } from './config/database.config';
+import { typeOrmConfig } from './data/config/database.config';
 
 @Module({
   imports: [
@@ -15,9 +14,8 @@ import { typeOrmConfig } from './config/database.config';
       useFactory: async () => typeOrmConfig,
       }),
     
-    VuelosModule, HorariosModule, DestinosModule, 
-    PasajerosModule, AvionesModule],
-
+    HorariosModule, DestinosModule, PasajerosModule, AvionesModule],
+    
   controllers: [AppController],
   providers: [AppService],
 })

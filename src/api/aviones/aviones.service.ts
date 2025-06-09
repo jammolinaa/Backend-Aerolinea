@@ -1,7 +1,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Aviones } from './entities/avione.entity';
+import { Aviones } from '../../data/entities/aviones/avione.entity';
 import { CreateAvioneDto } from './dto/create-avione.dto';
 import { UpdateAvioneDto } from './dto/update-avione.dto';
 

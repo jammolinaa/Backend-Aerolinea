@@ -1,6 +1,4 @@
-// src/pasajeros/pasajeros.controller.ts
-import {
-  Controller,Post,Get,Patch,Delete,Param,Body} from '@nestjs/common';
+import { Controller,Post,Get,Patch,Delete,Param,Body} from '@nestjs/common';
 import { PasajerosService } from './pasajeros.service';
 import { CreatePasajeroDto } from './dto/create-pasajero.dto';
 import { UpdatePasajeroDto } from './dto/update-pasajero.dto';
