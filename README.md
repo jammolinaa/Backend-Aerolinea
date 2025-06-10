@@ -32,7 +32,7 @@
 
 ### 1. Clonar el repositorio
 ```bash
-git clone https://github.com/jammolinaa/Aerolinea.git
+git clone https://github.com/jammolinaa/Backend-Aerolinea
 cd Aerolinea
 ```
 
@@ -71,7 +71,7 @@ Puedes probar la API usando herramientas como:
 ## 📚 Endpoints y Ejemplos
 
 ### ✈️ Aviones
-**Endpoint:** `POST http://localhost:3000/aviones`
+**Endpoint:** `POST http://localhost:3000/api/aviones`
 
 ```json
 {
@@ -82,7 +82,7 @@ Puedes probar la API usando herramientas como:
 ```
 
 ### 👥 Pasajeros
-**Endpoint:** `POST http://localhost:3000/pasajeros`
+**Endpoint:** `POST http://localhost:3000/api/pasajeros`
 
 ```json
 {
@@ -93,7 +93,7 @@ Puedes probar la API usando herramientas como:
 ```
 
 ### 🌍 Destinos
-**Endpoint:** `POST http://localhost:3000/destinos`
+**Endpoint:** `POST http://localhost:3000/api/destinos`
 
 ```json
 {
@@ -105,12 +105,12 @@ Puedes probar la API usando herramientas como:
 ```
 
 ### ⏰ Horarios
-**Endpoint:** `POST http://localhost:3000/horarios`
+**Endpoint:** `POST http://localhost:3000/api/horarios`
 
 ```json
 {
-  "salida": "2025-06-01T08:30:00Z",
-  "llegada": "2025-06-01T12:45:00Z"
+  "salida": "2025-06-01 08:30",
+  "llegada": "2025-06-01 12:45"
 }
 ```
 
@@ -125,11 +125,48 @@ Puedes probar la API usando herramientas como:
 
 ```
 src/
-├── aviones/
-├── pasajeros/
-├── destinos/
-├── horarios/
+│
+├── api/
+│   ├── aviones/
+│   │   ├── dto/
+│   │   ├── aviones.controller.ts
+│   │   ├── aviones.module.ts
+│   │   └── aviones.service.ts
+|   |
+│   ├── destinos/
+│   │   ├── dto/
+│   │   ├── destinos.controller.ts
+│   │   ├── destinos.module.ts
+│   │   └── destinos.service.ts  
+|   |
+│   ├── horarios/
+│   │   ├── dto/
+│   │   ├── horarios.controller.ts
+│   │   ├── horarios.module.ts
+│   │   └── horarios.service.
+|   |
+│   └── pasajeros/
+│       ├── dto/
+│       ├── pasajeros.controller.ts
+│       ├── pasajeros.module.ts
+│       └── pasajeros.service.ts
+|       
+├── data/
+│   ├── config
+|   |        └──database.config.ts
+|   ├── entities/
+│   ├── aviones/
+│   │   └── avione.entity.ts
+│   ├── destinos/
+│   │   └── destino.entity.ts
+│   ├── horarios/
+│   │   └── horario.entity.ts
+│   └── pasajeros/
+│       └── pasajero.entity.ts
+│
+├── app.controller.ts
 ├── app.module.ts
+├── app.service.ts
 └── main.ts
 ```
 
