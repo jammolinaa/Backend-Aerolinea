@@ -1,11 +1,10 @@
-import {Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
-
 export class Destino {
-@PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn()
   id: number;
-  
+
   @Column()
   ciudad: string;
 
@@ -14,5 +13,4 @@ export class Destino {
 
   @Column()
   codigoAeropuerto: string;
-
 }

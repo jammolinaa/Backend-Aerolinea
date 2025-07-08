@@ -10,15 +10,16 @@ export class AvionesService {
   constructor(
     @InjectRepository(Aviones)
     private avionesRepository: Repository<Aviones>,
-  ) { }
+  ) {}
 
-  async create(createAvioneDto: CreateAvioneDto): Promise<{ message: string; data: Aviones }> {
-  const nuevoAvion = this.avionesRepository.create(createAvioneDto);
-  const guardado = await this.avionesRepository.save(nuevoAvion);
-  console.log('✅ Avión creado:', guardado);
-  return { message: 'Avión creado exitosamente', data: guardado };
-}
-
+  async create(
+    createAvioneDto: CreateAvioneDto,
+  ): Promise<{ message: string; data: Aviones }> {
+    const nuevoAvion = this.avionesRepository.create(createAvioneDto);
+    const guardado = await this.avionesRepository.save(nuevoAvion);
+    console.log('✅ Avión creado:', guardado);
+    return { message: 'Avión creado exitosamente', data: guardado };
+  }
 
   async findAll(): Promise<Aviones[]> {
     return await this.avionesRepository.find();
@@ -30,14 +31,14 @@ export class AvionesService {
 
   async update(id: number, updateAvioneDto: UpdateAvioneDto): Promise<Aviones> {
     await this.avionesRepository.update(id, updateAvioneDto);
-    return this.findOne(id); 
+    return this.findOne(id);
   }
 
   async remove(id: number): Promise<{ message: string }> {
-        const result = await this.avionesRepository.delete(id);
-        if (result.affected === 0) {
-          throw new NotFoundException(`Pasajero con ID ${id} no encontrado`);
-        }
-        return { message: `Pasajero con ID ${id} eliminado` };
-      }
+    const result = await this.avionesRepository.delete(id);
+    if (result.affected === 0) {
+      throw new NotFoundException(`Pasajero con ID ${id} no encontrado`);
+    }
+    return { message: `Pasajero con ID ${id} eliminado` };
+  }
 }

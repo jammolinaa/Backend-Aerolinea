@@ -1,6 +1,11 @@
-import { IsNotEmpty, IsString, IsInt, IsBoolean, IsOptional } from 'class-validator';
+import {
+  IsNotEmpty,
+  IsString,
+  IsInt,
+  IsBoolean,
+  IsOptional,
+} from 'class-validator';
 export class CreateAvioneDto {
-
   id: number;
 
   @IsString()

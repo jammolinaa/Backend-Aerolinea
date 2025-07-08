@@ -7,15 +7,23 @@ import { PasajerosModule } from './api/pasajeros/pasajeros.module';
 import { AvionesModule } from './api/aviones/aviones.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeOrmConfig } from './data/config/database.config';
+import { UsersModule } from './api/users/users.module';
+import { UserClientModule } from './core/user-client/user-client.module';
+// import { ModbusModule } from './core/modbus/modbus.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRootAsync({
       useFactory: async () => typeOrmConfig,
-      }),
-    
-    HorariosModule, DestinosModule, PasajerosModule, AvionesModule],
-    
+    }),
+    UserClientModule, // ✅ Esto es lo que crea y exporta USER_SERVICE
+    HorariosModule,
+    DestinosModule,
+    PasajerosModule,
+    AvionesModule,
+    UsersModule,
+  ],
+
   controllers: [AppController],
   providers: [AppService],
 })

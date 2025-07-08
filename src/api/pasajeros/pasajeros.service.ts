@@ -23,7 +23,8 @@ export class PasajerosService {
 
   async findOne(id: number): Promise<Pasajero> {
     const pasajero = await this.pasajeroRepository.findOneBy({ id });
-    if (!pasajero) throw new NotFoundException(`Pasajero con ID ${id} no encontrado`);
+    if (!pasajero)
+      throw new NotFoundException(`Pasajero con ID ${id} no encontrado`);
     return pasajero;
   }
 

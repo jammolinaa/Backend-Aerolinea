@@ -5,7 +5,7 @@ import { Aviones } from '../../data/entities/aviones/avione.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
-   imports: [TypeOrmModule.forFeature([Aviones])],
+  imports: [TypeOrmModule.forFeature([Aviones])],
   controllers: [AvionesController],
   providers: [AvionesService],
 })

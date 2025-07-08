@@ -22,19 +22,22 @@ export class DestinosService {
   }
 
   async findOne(id: number): Promise<Destino> {
-      return await this.destinoRepository.findOneBy({ id });
-    }
-  
-  async update(id: number, updateDestinoDto: UpdateDestinoDto): Promise<Destino> {
-      await this.destinoRepository.update(id, updateDestinoDto);
-      return this.findOne(id);
-    }
-  
+    return await this.destinoRepository.findOneBy({ id });
+  }
+
+  async update(
+    id: number,
+    updateDestinoDto: UpdateDestinoDto,
+  ): Promise<Destino> {
+    await this.destinoRepository.update(id, updateDestinoDto);
+    return this.findOne(id);
+  }
+
   async remove(id: number): Promise<{ message: string }> {
-        const result = await this.destinoRepository.delete(id);
-        if (result.affected === 0) {
-          throw new NotFoundException(`Pasajero con ID ${id} no encontrado`);
-        }
-        return { message: `Pasajero con ID ${id} eliminado` };
-      }
+    const result = await this.destinoRepository.delete(id);
+    if (result.affected === 0) {
+      throw new NotFoundException(`Pasajero con ID ${id} no encontrado`);
+    }
+    return { message: `Pasajero con ID ${id} eliminado` };
+  }
 }

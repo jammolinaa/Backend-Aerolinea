@@ -1,18 +1,16 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Pasajero {
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @PrimaryGeneratedColumn()
-    id: number;
+  @Column()
+  nombre: string;
 
-    @Column()
-    nombre: string;
+  @Column()
+  documento: number;
 
-    @Column()
-    documento: number;
-
-    @Column()
-    email: string;
-
+  @Column()
+  email: string;
 }

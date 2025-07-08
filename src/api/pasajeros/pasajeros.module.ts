@@ -8,6 +8,6 @@ import { Pasajero } from '../../data/entities/pasajeros/pasajero.entity';
   imports: [TypeOrmModule.forFeature([Pasajero])],
   controllers: [PasajerosController],
   providers: [PasajerosService],
-  exports: [TypeOrmModule], 
+  exports: [TypeOrmModule],
 })
 export class PasajerosModule {}
